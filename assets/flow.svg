@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 300" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF3D7F"/>
+      <stop offset="1" stop-color="#8DEAFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1040" height="300" rx="16" fill="#0d1117"/>
+
+  <!-- title -->
+  <text x="520" y="44" text-anchor="middle" fill="#e6edf3" font-size="22" font-weight="700">how it resolves</text>
+  <text x="520" y="68" text-anchor="middle" fill="#8b949e" font-size="13">no guessing. the chain already knows.</text>
+
+  <!-- nodes -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <rect x="10" y="110" width="160" height="72" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="90" y="140" fill="#e6edf3">TOKEN</text>
+    <text x="90" y="162" fill="#8b949e" font-size="11" font-weight="400">0x… address</text>
+
+    <rect x="215" y="110" width="160" height="72" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="295" y="140" fill="#e6edf3">DEXSCREENER</text>
+    <text x="295" y="162" fill="#8b949e" font-size="11" font-weight="400">most liquid v4 pair</text>
+
+    <rect x="420" y="110" width="160" height="72" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="500" y="140" fill="#e6edf3">POOL ID</text>
+    <text x="500" y="162" fill="#8b949e" font-size="11" font-weight="400">keccak256(poolKey)</text>
+
+    <rect x="625" y="110" width="160" height="72" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="705" y="140" fill="#e6edf3">INITIALIZE</text>
+    <text x="705" y="162" fill="#8b949e" font-size="11" font-weight="400">event, PoolManager</text>
+
+    <rect x="830" y="110" width="160" height="72" rx="10" fill="#161b22" stroke="url(#accent)" stroke-width="2">
+      <animate attributeName="opacity" values="0.75;1;0.75" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="910" y="132" fill="#e6edf3">fee</text>
+    <text x="910" y="152" fill="#e6edf3">tickSpacing</text>
+    <text x="910" y="172" fill="#e6edf3">hooks</text>
+  </g>
+
+  <!-- animated connectors -->
+  <g stroke="#FF3D7F" stroke-width="2" stroke-dasharray="7 6" fill="none">
+    <line x1="172" y1="146" x2="208" y2="146">
+      <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.7s" repeatCount="indefinite"/>
+    </line>
+    <line x1="377" y1="146" x2="413" y2="146">
+      <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.7s" begin="0.15s" repeatCount="indefinite"/>
+    </line>
+    <line x1="582" y1="146" x2="618" y2="146">
+      <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.7s" begin="0.3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="787" y1="146" x2="823" y2="146">
+      <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.7s" begin="0.45s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  <g fill="#FF3D7F">
+    <polygon points="208,140 218,146 208,152"/>
+    <polygon points="413,140 423,146 413,152"/>
+    <polygon points="618,140 628,146 618,152"/>
+    <polygon points="823,140 833,146 823,152"/>
+  </g>
+
+  <!-- footer -->
+  <text x="520" y="232" text-anchor="middle" fill="#8b949e" font-size="13">hardcoded <tspan fill="#FF3D7F" font-weight="700">(fee=10000, hooks=launchpad)</tspan> works until a custom-hook pool reverts your swap.</text>
+  <text x="520" y="256" text-anchor="middle" fill="#8b949e" font-size="13">reading the parameters from the chain works for <tspan fill="#8DEAFF" font-weight="700">every</tspan> v4 pool — including ones deployed tomorrow.</text>
+</svg>
